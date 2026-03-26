@@ -11,10 +11,19 @@ boton1 = ttk.Button(ventana, text='Boton 1')
 boton2 = ttk.Button(ventana, text='Boton 2')
 boton3 = ttk.Button(ventana, text='Boton 3')
 
+# Configurar el grid
+ventana.columnconfigure(0, weight=1)
+ventana.columnconfigure(1, weight=10)
+ventana.columnconfigure(2, weight=1)
+
+ventana.rowconfigure(0, weight=1)
+ventana.rowconfigure(1, weight=1)
+ventana.rowconfigure(2, weight=1)
+
 # Publicados d manera horizontal
-# boton1.grid(row=0, column=0)
-# boton2.grid(row=0, column=1)
-# boton3.grid(row=0, column=2)
+boton1.grid(row=0, column=0)
+boton2.grid(row=0, column=1)
+boton3.grid(row=0, column=2)
 
 # Publicados de manera vertical
 # boton1.grid(row=0, column=0)
@@ -22,9 +31,9 @@ boton3 = ttk.Button(ventana, text='Boton 3')
 # boton3.grid(row=2, column=0)
 
 # Publicados en diagonal
-boton1.grid(row=0, column=0)
-boton2.grid(row=1, column=1)
-boton3.grid(row=2, column=2)
+# boton1.grid(row=0, column=0)
+# boton2.grid(row=1, column=1)
+# boton3.grid(row=2, column=2)
 
 
 ventana.mainloop()
