@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter.messagebox import showinfo
 
 ventana = tk.Tk()
 ventana.geometry("600x400")
@@ -41,6 +42,16 @@ for persona in datos:
 scrollbar = ttk.Scrollbar(ventana, orient=tk.VERTICAL, command=tabla.yview)
 tabla.configure(yscroll=scrollbar.set)
 scrollbar.grid(column=1, row=0, sticky=tk.NS)
+
+# Mostrar registro seleccionado
+def mostrar_seleccionado(event):
+    elemento_seleccionado = tabla.selection()[0]#obtenemos el primer elemento seleccionado
+    elemento = tabla.item(elemento_seleccionado)
+    persona = elemento['values']
+    showinfo(title='Registro seleccionado', message=f'Id: {persona[0]}\nNombre: {persona[1]}\nEdad: {persona[2]}')
+
+# Asociar el evento select de la tabla
+tabla.bind('<<TreeviewSelect>>', mostrar_seleccionado)
 
 tabla.grid(column=0, row=0, sticky=tk.NSEW)
 ventana.mainloop()
