@@ -27,8 +27,8 @@
 
 ### 1. Clonar el repositorio
 ```bash
-git clone [https://github.com/Valduz-Jose/zona-fit-gym.git](https://github.com/Valduz-Jose/zona-fit-gym.git)
-cd zona-fit-gym
+git clone https://github.com/Valduz-Jose/Aplicaciones-de-escritorio-con-Tkinter--GUI-Python-.git
+cd Aplicaciones-de-escritorio-con-Tkinter--GUI-Python-
 ```
 
 ### 2. Configurar la Base de Datos
