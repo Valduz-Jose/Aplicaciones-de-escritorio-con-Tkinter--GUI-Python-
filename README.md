@@ -19,29 +19,41 @@
 ## 📋 Estructura del Proyecto
 
 * `cliente.py`: Clase de modelo que representa la entidad Cliente.
-* `cliente_dao.py`: Capa de acceso a datos con métodos estáticos para interactuar con la DB.
-* `conexion.py`: Configuración del Pool de conexiones y métodos para obtener/liberar conexiones.
-* `zona_fit_gui_App.py`: Lógica principal de la interfaz gráfica y eventos de usuario.
+* `cliente_dao.py`: Capa de acceso a datos con métodos para seleccionar, insertar, actualizar y eliminar registros.
+* `conexion.py`: Configuración del Pool de conexiones para la base de datos `zona_fit_db`.
+* `zona_fit_gui_App.py`: Lógica principal de la interfaz gráfica y gestión de eventos.
 
-## 🔧 Configuración e Instalación
+## 🔧 Configuración e Instalación (Plug & Play)
 
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone [https://github.com/TU_USUARIO/zona-fit-gym.git](https://github.com/TU_USUARIO/zona-fit-gym.git)
-    ```
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/Valduz-Jose/zona-fit-gym.git](https://github.com/Valduz-Jose/zona-fit-gym.git)
+cd zona-fit-gym
+```
 
-2.  **Configurar la Base de Datos:**
-    * Crea una base de datos llamada `zona_fit_db`.
-    * Crea la tabla `cliente` con las columnas: `id` (AI), `nombre`, `apellido` y `membresia`.
-    * Ajusta las credenciales en `conexion.py` (Usuario: `root`, Password: `admin` por defecto).
+### 2. Configurar la Base de Datos
+Ejecuta el siguiente script en tu gestor MySQL (como MySQL Workbench):
 
-3.  **Ejecutar la aplicación:**
-    ```bash
-    python zona_fit_gui_App.py
-    ```
+```bash
+CREATE DATABASE IF NOT EXISTS zona_fit_db;
+USE zona_fit_db;
 
-## 📸 Vista Previa
-![Captura de pantalla de la App]([https://tu-enlace-a-la-imagen-aqui.png](https://github.com/Valduz-Jose/Aplicaciones-de-escritorio-con-Tkinter--GUI-Python-/blob/main/zona_fit_gui/screnshot.png?raw=true))
+CREATE TABLE IF NOT EXISTS cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    apellido VARCHAR(255) NOT NULL,
+    membresia INT NOT NULL
+);
+```
+### 3. Instalar dependencias
+```bash
+pip install mysql-connector-python
+```
+### 4. Ejecutar la aplicación
+```bash
+python zona_fit_gui_App.py
+```
 
----
-Desarrollado con ❤️ por Jose Alejandro Valduz Contreras
+📸 Vista Previa
+Desarrollado con fines educativos y profesionales por Jose Alejandro Valduz Contreras.
+<img width="875" height="625" alt="Captura de pantalla 2026-03-27 135125" src="https://github.com/user-attachments/assets/4eda12cc-e648-409d-82fe-21032edb175e" />
